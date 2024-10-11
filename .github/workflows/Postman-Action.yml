@@ -33,6 +33,7 @@ jobs:
         run : newman run Crisp\ Automation.postman_collection.json -r htmlextra,cli
      
       - name: Archive a HTML Report
+        if: always()  # This ensures the step runs even if previous steps fail
         uses: actions/upload-artifact@v4.4.3
         with:
          name: POSTMAN TEST REPORT
