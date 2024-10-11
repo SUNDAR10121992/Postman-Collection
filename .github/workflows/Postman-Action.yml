@@ -31,5 +31,11 @@ jobs:
 
       - name: Execute Postman Collect
         run : newman run Crisp\ Automation.postman_collection.json -r htmlextra,cli
+     
+      - name: Archive a HTML Report
+        uses: actions/upload-artifact@v4.4.3
+        with:
+         name: POSTMAN TEST REPORT
+         path: newman/*.html
 
         
